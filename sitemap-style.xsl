@@ -16,7 +16,7 @@
         <h1>Site Haritası</h1>
         <table>
           <tr>
-            <th>https:/URL/th>
+            <th>URL/th>
           </tr>
           <xsl:for-each select="urlset/url">
             <tr>
