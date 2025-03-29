@@ -1,57 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="sitemap-style.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://suleymankokel.github.io/web-site/index.html</loc>
+  </url>
+  <url>
+    <loc>https://suleymankokel.github.io/web-site/sayfa2.html</loc>
+  </url>
+  <url>
+    <loc>https://suleymankokel.github.io/web-site/sayfa3.html</loc>
+  </url>
+</urlset>
+<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-  <xsl:output method="html" encoding="UTF-8"/>
+  <xsl:output method="html" encoding="UTF-8" indent="yes"/>
   <xsl:template match="/">
     <html>
       <head>
         <title>Site Haritası</title>
-        <style>
+        <style type="text/css">
           body {
             font-family: Arial, sans-serif;
-            background-color: #f4f7fa;
-            margin: 0;
-            padding: 20px;
+            margin: 20px;
+            background-color: #f9f9f9;
           }
           h1 {
             color: #333;
             text-align: center;
-            margin-bottom: 20px;
-            font-size: 28px;
           }
           table {
-            width: 80%;
-            margin: 0 auto;
+            width: 100%;
             border-collapse: collapse;
             background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            overflow: hidden;
+            margin-top: 20px;
           }
           th, td {
-            padding: 12px 15px;
+            padding: 8px;
             text-align: left;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid #ddd;
           }
           th {
-            background-color: #4a90e2;
-            color: white;
+            background-color: #f2f2f2;
             font-weight: bold;
-            text-transform: uppercase;
           }
-          td a {
-            color: #2c3e50;
+          a {
+            color: #0066cc;
             text-decoration: none;
-            transition: color 0.3s ease;
           }
-          td a:hover {
-            color: #e74c3c;
+          a:hover {
             text-decoration: underline;
-          }
-          tr:nth-child(even) {
-            background-color: #f9f9f9;
-          }
-          tr:hover {
-            background-color: #eef2f7;
           }
         </style>
       </head>
@@ -61,11 +58,17 @@
           <tr>
             <th>URL</th>
           </tr>
-          <xsl:for-each select="urlset/url">
+          <xsl:for-each select="/urlset/url">
             <tr>
               <td>
                 <a href="{loc}">
                   <xsl:value-of select="loc"/>
                 </a>
               </td>
-</urlset>
+            </tr>
+          </xsl:for-each>
+        </table>
+      </body>
+    </html>
+  </xsl:template>
+</xsl:stylesheet>
