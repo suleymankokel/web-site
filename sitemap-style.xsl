@@ -16,9 +16,7 @@
         <h1>Site Haritası</h1>
         <table>
           <tr>
-            <th>URL https://suleymankokel.github.io/web-site/index.html
-                    https://suleymankokel.github.io/web-site/sayfa2.html
-                    https://suleymankokel.github.io/web-site/sayfa3.html/th>
+            <th>URL https://suleymankokel.github.io/web-site/index.html/th>
           </tr>
           <xsl:for-each select="urlset/url">
             <tr>
