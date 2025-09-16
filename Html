@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunduz Tarzı KPSS Tarih Testi</title>
+    <style>
+        /* TEMEL SAYFA STİLLERİ */
+        body {
+            background-color: #f0f2f5;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* ANA TEST KONTEYNERİ */
+        .quiz-container {
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            overflow: hidden;
+        }
+
+        /* TEST BAŞLIĞI */
+        .quiz-header {
+            background-color: #28a745; /* Kunduz Yeşili */
+            color: #ffffff;
+            padding: 20px 25px;
+            text-align: center;
+        }
+
+        .quiz-header h1 {
+            margin: 0;
+            font-size: 1.5em;
+        }
+        
+        .quiz-header p {
+            margin: 5px 0 0;
+            opacity: 0.9;
+        }
+
+        /* SORU ALANI */
+        .quiz-body {
+            padding: 25px;
+        }
+
+        .question-block {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .question-block:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .question-text {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #343a40;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        /* SEÇENEKLER */
+        .options-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .option-item {
+            margin-bottom: 12px;
+        }
+
+        .option-label {
+            display: block;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .option-label:hover {
+            background-color: #e9ecef;
+            border-color: #adb5bd;
+        }
+        
+        .option-input {
+            display: none; /* Radio butonları gizliyoruz, label'ı kullanacağız */
+        }
+        
+        /* === DÜZELTİLMİŞ KISIM === */
+        /* Seçim yapıldığında genel stil (YANLIŞ) */
+        .option-input:checked + .option-label {
+            background-color: #dc3545; /* Kırmızı */
+            color: white;
+            border-color: #c82333;
+        }
+
+        /* Seçim DOĞRU ise bu stil yukarıdakini ezer (DOĞRU) */
+        .option-input[data-correct="true"]:checked + .option-label {
+            background-color: #28a745; /* Yeşil */
+            color: white;
+            border-color: #218838;
+        }
+        /* === DÜZELTME SONU === */
+
+
+        /* AÇIKLAMA KUTUSU */
+        .explanation {
+            display: none; /* Başlangıçta gizli */
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #e9f7ec;
+            border-left: 4px solid #28a745;
+            color: #155724;
+            font-size: 0.95em;
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <div class="quiz-header">
+            <h1>KPSS Tarih Testi</h1>
+            <p>I. Dünya Savaşı Sonrası Gelişmeler</p>
+        </div>
+        <div class="quiz-body">
+            <div class="question-block">
+                <p class="question-text">1. Osmanlı Devleti'nin I. Dünya Savaşı'ndan çekildiği ve İtilaf Devletleri'ne fiilen teslim olduğu antlaşma aşağıdakilerden hangisidir?</p>
+                <ul class="options-list">
+                    <li class="option-item">
+                        <input type="radio" name="q1" id="q1a1" class="option-input">
+                        <label for="q1a1" class="option-label">A) Sevr Antlaşması</label>
+                    </li>
+                    <li class="option-item">
+                        <input type="radio" name="q1" id="q1a2" class="option-input">
+                        <label for="q1a2" class="option-label">B) Lozan Antlaşması</label>
+                    </li>
+                    <li class="option-item">
+                        <input type="radio" name="q1" id="q1a3" class="option-input" data-correct="true">
+                        <label for="q1a3" class="option-label">C) Mondros Ateşkes Antlaşması</label>
+                    </li>
+                    <li class="option-item">
+                        <input type="radio" name="q1" id="q1a4" class="option-input">
+                        <label for="q1a4" class="option-label">D) Uşi Antlaşması</label>
+                    </li>
+                </ul>
+                <div class="explanation">
+                    <strong>Doğru Cevap: Mondros Ateşkes Antlaşması.</strong> 30 Ekim 1918'de imzalanan bu antlaşma ile Osmanlı Devleti savaştan çekilmiş ve Anadolu'nun işgaline zemin hazırlanmıştır.
+                </div>
+            </div>
+
+            <div class="question-block">
+                <p class="question-text">2. İzmir'in 15 Mayıs 1919'da Yunanlılar tarafından işgaline karşı ilk kurşunu atarak Milli Mücadele'nin sembol isimlerinden biri olan gazeteci kimdir?</p>
+                <ul class="options-list">
+                    <li class="option-item">
+                        <input type="radio" name="q2" id="q2a1" class="option-input" data-correct="true">
+                        <label for="q2a1" class="option-label">A) Hasan Tahsin</label>
+                    </li>
+                    <li class="option-item">
+                        <input type="radio" name="q2" id="q2a2" class="option-input">
+                        <label for="q2a2" class="option-label">B) Şahin Bey</label>
+                    </li>
+                    <li class="option-item">
+                        <input type="radio" name="q2" id="q2a3" class="option-input">
+                        <label for="q2a3" class="option-label">C) Sütçü İmam</label>
+                    </li>
+                     <li class="option-item">
+                        <input type="radio" name="q2" id="q2a4" class="option-input">
+                        <label for="q2a4" class="option-label">D) Yörük Ali Efe</label>
+                    </li>
+                </ul>
+                <div class="explanation">
+                    <strong>Doğru Cevap: Hasan Tahsin.</strong> Asıl adı Osman Nevres olan gazeteci Hasan Tahsin, İzmir'in işgali sırasında Yunan askerlerine ateş açarak direnişi başlatmıştır.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tüm seçenekleri (radio butonları) seçiyoruz
+        document.querySelectorAll('.option-input').forEach(input => {
+            // Her bir seçeneğe bir 'change' (değişim) olayı ekliyoruz
+            input.addEventListener('change', (event) => {
+                const secilenInput = event.target;
+                const soruBloku = secilenInput.closest('.question-block');
+                const soruGrubuAdi = secilenInput.name;
+                const aciklamaKutusu = soruBloku.querySelector('.explanation');
+
+                // O sorudaki diğer tüm seçenekleri pasif hale getir (tekrar tıklanamasın)
+                document.querySelectorAll(`input[name="${soruGrubuAdi}"]`).forEach(radio => {
+                    radio.disabled = true;
+                });
+                
+                // İlgili sorunun açıklama kutusunu görünür yap
+                if (aciklamaKutusu) {
+                    aciklamaKutusu.style.display = 'block';
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+
